@@ -48,4 +48,14 @@ Este algoritmo es de complejidad exponencial porque la cantidad de pasos que se 
 
 ## Sobre el proyecto
 
+- Para ejecutar el proyecto, primero instale las dependencias con:
 
+```bash
+pip install -r requirements.txt
+```
+
+- Luego, ejecute el proyecto con:
+
+```bash
+python __init__.py
+```

@@ -1,5 +1,5 @@
 # Extraído de https://github.com/danteBenitez/tlp-python-busqueda/blob/main/binary_search.py
-
+import random
 from typing import TypeVar
 
 T = TypeVar('T')
@@ -56,4 +56,5 @@ def binary_search_with(n: int) -> int:
         Realiza una búsqueda binaria en una lista de tamaño `n`.
     """
     lst = list(range(n))
-    return binary_search_asc(lst, n - 1)
+    target = lst[random.randint(0, n - 1)]
+    return binary_search_asc(lst, target)

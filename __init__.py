@@ -1,4 +1,3 @@
-import time
 import numpy as np
 
 import matplotlib.pyplot as plt
@@ -10,8 +9,7 @@ from measure import measure_time
 
 from array_access import array_access_with
 
-# N_VALUES = list(map(int, np.linspace(1, 1000, 10).tolist()))
-N_VALUES = [i for i in range(1, 100, 1)]
+N_VALUES = [i for i in range(1, 30)]
 
 def measure_times_for(fn: callable, n_values: np.ndarray) -> np.ndarray:
     """
@@ -49,22 +47,21 @@ def plot_time_against_n(plt: plt, fn: callable, label: str):
 
 plt.xlabel('Tamaño de la entrada (n)')
 plt.ylabel('Tiempo de ejecución (segundos)')
-
 plt.title('Comparación de Algoritmos según Notación Big O')
 
 # O(1)
-plot_time_against_n(plt, array_access_with, label='O(1)')
+plot_time_against_n(plt, array_access_with, label='O(1) - Acceso de arreglo')
 
 # O(log n)
-# plot_time_against_n(plt, binary_search_with, label='O(log n)')
+plot_time_against_n(plt, binary_search_with, label='O(log n) - Búsqueda binaria')
 
 # O(n)
-# plot_time_against_n(plt, linear_search_with, label='O(n)')
+plot_time_against_n(plt, linear_search_with, label='O(n) - Búsqueda lineal')
 
 # O(n²)
-# plot_time_against_n(plt, bubble_sort_with, label='O(n²)')
+plot_time_against_n(plt, bubble_sort_with, label='O(n²) - Ordenamiento burbuja')
 
 # O(k^n)
-# plot_time_against_n(plt, fibonacci, label='O(k^n)')
+plot_time_against_n(plt, fibonacci, label='O(k^n) - Serie de Fibonacci')
 
 plt.show()
